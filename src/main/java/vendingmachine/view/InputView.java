@@ -19,7 +19,7 @@ public class InputView {
         }
     }
 
-    public static String readProducts() {
+    public static String readProductsInfo() {
         System.out.println(INPUT_PRODUCTS);
         String input = input();
         return input;
@@ -35,7 +35,7 @@ public class InputView {
         }
     }
 
-    public static String readProduct() {
+    public static String readProductToBuy() {
         System.out.println(INPUT_PRODUCT);
         return input();
     }
