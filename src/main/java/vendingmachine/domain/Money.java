@@ -1,5 +1,7 @@
 package vendingmachine.domain;
 
+import java.util.List;
+
 public class Money {
 
     int money;
@@ -12,8 +14,8 @@ public class Money {
         return money;
     }
 
-    public void decreaseMoney(int money) {
-        this.money -= money;
+    public void decreaseMoney(List<Integer> money) {
+        this.money -= money.get(0);
     }
 
 }
