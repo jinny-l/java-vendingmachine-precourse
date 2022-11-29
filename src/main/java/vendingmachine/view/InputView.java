@@ -1,6 +1,8 @@
 package vendingmachine.view;
 
 import camp.nextstep.edu.missionutils.Console;
+import vendingmachine.Coin;
+import vendingmachine.information.ErrorMessage;
 
 public class InputView {
 
@@ -12,10 +14,26 @@ public class InputView {
     public static int readCoins() {
         System.out.println(INPUT_COINS);
         String input = input();
+        int coins;
         try {
-            return Integer.parseInt(input);
+            coins = Integer.parseInt(input);
         } catch (NumberFormatException ne) {
             throw new IllegalArgumentException();
+        }
+        validateMinCoin(coins);
+        validateCoinUnit(coins);
+        return coins;
+    }
+
+    public static void validateMinCoin(int input) {
+        if (input < Coin.COIN_10.getAmount()) {
+            throw new IllegalArgumentException(ErrorMessage.INPUT_ERROR.getMessage());
+        }
+    }
+
+    private static void validateCoinUnit(int money) {
+        if (money % Coin.COIN_10.getAmount() != 0) {
+            throw new IllegalArgumentException(ErrorMessage.INPUT_ERROR.getMessage());
         }
     }
 
