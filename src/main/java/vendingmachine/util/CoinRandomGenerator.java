@@ -6,8 +6,8 @@ import vendingmachine.Coin;
 
 public class CoinRandomGenerator implements CoinGenerator {
 
-    public void generate(int coins, List<Integer> coinsInformation) {
-        List<Integer> coinsCount = Coin.getCoinsInformation();
+    public void generate(int coins) {
+        List<Integer> coinsInformation = Coin.getCoinsAmount();
         while (coins > 0) {
             int coin = Randoms.pickNumberInList(coinsInformation);
             for (int i = 0; i < Coin.values().length; i++) {
