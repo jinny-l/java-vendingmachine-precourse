@@ -10,10 +10,10 @@ public class CoinRandomGenerator implements CoinGenerator {
         List<Integer> coinsInformation = Coin.getCoinsAmount();
         while (coins > 0) {
             int coin = Randoms.pickNumberInList(coinsInformation);
+            if (coin > coins) {
+                continue;
+            }
             for (int i = 0; i < Coin.values().length; i++) {
-                if (coin > coins) {
-                    continue;
-                }
                 if (coin == Coin.values()[i].getAmount()) {
                     Coin.values()[i].increaseCount();
                 }
