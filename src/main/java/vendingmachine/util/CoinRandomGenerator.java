@@ -7,9 +7,9 @@ import vendingmachine.constant.Coin;
 public class CoinRandomGenerator implements CoinGenerator {
 
     //TODO: 리팩토링 필요
-    public int[] generate(int coins) {
+    public Integer[] generate(int coins) {
         List<Integer> coinsInformation = Coin.getCoinsAmount();
-        int[] coinsCount = new int[Coin.values().length];
+        Integer[] coinsCount = new Integer[Coin.values().length];
         while (coins > 0) {
             int coin = Randoms.pickNumberInList(coinsInformation);
             if (coin > coins) {
