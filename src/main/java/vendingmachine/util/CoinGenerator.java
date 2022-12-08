@@ -3,5 +3,5 @@ package vendingmachine.util;
 @FunctionalInterface
 public interface CoinGenerator {
 
-    void generate(int coins);
+    int[] generate(int coins);
 }
