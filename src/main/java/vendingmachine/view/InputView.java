@@ -6,13 +6,18 @@ import vendingmachine.constant.message.SystemMessage;
 
 public class InputView {
 
-    public static int readCoins() {
+    public static int readMoney() {
         System.out.println(SystemMessage.INPUT_COINS);
         try {
             return Integer.parseInt(readLine());
         } catch (NumberFormatException ne) {
             throw new IllegalArgumentException(ErrorMessage.INVALID_COINS_INPUT_TYPE.toString());
         }
+    }
+
+    public static String readProducts() {
+        System.out.println(SystemMessage.INPUT_PRODUCTS);
+        return readLine();
     }
 
     private static String readLine() {
